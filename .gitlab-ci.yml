@@ -1,0 +1,17 @@
+image: docker
+
+services:
+- docker:dind
+
+stages:
+- build
+
+variables:
+  RELEASE_IMAGE: artifactory.in/docker-local/cloud9-docker:latest
+
+
+build:
+  stage: build
+  script:
+    - docker build --pull -t $RELEASE_IMAGE .
+    - docker push $RELEASE_IMAGE
