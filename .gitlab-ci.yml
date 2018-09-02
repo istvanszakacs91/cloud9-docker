@@ -14,5 +14,3 @@ build:
   script:
     - docker build --pull -t $RELEASE_IMAGE .
     - docker push $RELEASE_IMAGE
-tags:
-    - docker
