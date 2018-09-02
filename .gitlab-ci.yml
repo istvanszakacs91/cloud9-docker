@@ -8,11 +8,11 @@ stages:
 variables:
   RELEASE_IMAGE: artifactory.in/docker-local/cloud9-docker:latest
 
-before_script:
-  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN gitlab.example.com:5555
 
 build:
   stage: build
   script:
     - docker build --pull -t $RELEASE_IMAGE .
     - docker push $RELEASE_IMAGE
+tags:
+    - docker
