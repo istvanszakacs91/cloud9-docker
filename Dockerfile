@@ -1,6 +1,6 @@
-FROM alpine
+FROM alpine:3.8
 
-RUN apk --update add build-base g++ make curl wget openssl-dev apache2-utils git libxml2-dev sshfs nodejs nodejs-npm bash tmux supervisor ruby ruby-dev \
+RUN apk --update add build-base g++ make curl wget openssl-dev apache2-utils git libxml2-dev sshfs nodejs nodejs-npm bash tmux supervisor ruby ruby-dev sqlite \
  && rm -f /var/cache/apk/*\
  && git clone https://github.com/c9/core.git /cloud9 \
  && cd cloud9 \
